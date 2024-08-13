@@ -1,0 +1,1 @@
+# rhdh_register_component_template
