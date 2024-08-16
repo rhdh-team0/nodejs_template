@@ -53,7 +53,7 @@ spec:
   steps:
     - action: debug:wait
       id: build-wait
-      name: Build Project
+      name: Build Application
       input:
         seconds: 2
     - action: debug:wait
@@ -75,7 +75,7 @@ spec:
   output:
     links:
       - title: Open the Source Code Repository
-        url: ${{ steps.register-wait.input.seconds }}
+        URL: "https://github.com/redhat-developer/red-hat-developer-hub-software-templates/blob/main/templates/github/nodejs-backend/template.yaml"
       - title: Open the Catalog Info Component
         icon: catalog
-        entityRef: ${{ steps.register-wait.input.seconds }}
+        entityRef: "https://backstage-rhdh-rhdh-operator.apps.cluster-ms72l.sandbox990.opentlc.com/catalog?filters%5Bkind%5D=user&filters%5Buser%5D=all"
