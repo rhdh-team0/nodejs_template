@@ -6,7 +6,6 @@ metadata:
   description: Create a Nodejs component backed by Mongodb
   tags:
     - nodejs
-    - mongodb
     - hackathon
 spec:
   owner: devs@globex.com
