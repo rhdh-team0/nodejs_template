@@ -5,9 +5,9 @@ metadata:
   title: Guestbook Project Template
   description: Create a Node js component backed by Mongodb
   tags:
-    - Nodejs
-    - MongoDB
-    - Hackathon
+    - nodejs
+    - mongoDB
+    - hackathon
 spec:
   owner: devs@globex.com
   type: service
