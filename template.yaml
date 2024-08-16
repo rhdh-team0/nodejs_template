@@ -1,0 +1,75 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: guestbook_template
+  title: Guestbook Project Template
+  description: Create a Node js component backed by Mongodb
+  tags:
+    - Nodejs
+    - MongoDB
+    - Hackathon
+spec:
+  owner: devs@globex.com
+  type: service
+  parameters:
+    - title: Provide component information
+      required:
+        - name
+      properties:
+        name:
+          title: Name of the component
+          type: string
+          description: Name of the component
+        organization:
+          title: Organization Name
+          type: string
+          default: globex-org
+        owner:
+          title: Component Owner
+          type: string
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              - kind: User
+        ci:
+          title: Select a CI method
+          type: string
+          description: This action will create a CI pipeline for your application based on chosen method
+          default: ../../../skeletons/github-actions/
+          enum:
+            - ../../../skeletons/tekton/
+          enumNames:
+            - OpenShift Pipelines
+        cd:
+          title: Select Image Registry
+          type: string
+          description: This action will push the container image to the selected registry
+          default: ../../../skeletons/quay/
+          enum:
+            - ../../../skeletons/quay/
+          enumNames:
+            - Quay.IO
+   
+  steps:
+    - id: Build Application
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.name }}'
+    - id: Provision CI/CD
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.name }}'
+    - id: Push to image Registry
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.name }}'
+    - id: Register Component in Catalog
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.name }}'
+  output:
+    message: 'The parameters you provided are: ${{ parameters.name }} '
