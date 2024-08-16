@@ -51,30 +51,30 @@ spec:
    
   steps:
     - action: debug:wait
-      id: build-wait-5sec
+      id: build-wait
       name: Build Application
       input:
-        seconds: 5
+        seconds: 2
     - action: debug:wait
-      id: ci-wait-5sec
+      id: ci-wait
       name: Provision CI/CD
       input:
-        seconds: 7
+        seconds: 3
     - action: debug:wait
-      id: push-wait-5sec
+      id: push-wait
       name: Push to image Registry
       input:
-        seconds: 6
+        seconds: 4
     - action: debug:wait
-      id: registerd-wait-5sec
+      id: register-wait
       name: Register Component in Catalog
       input:
-        seconds: 3
+        seconds: 1
   
   output:
     links:
       - title: Open the Source Code Repository
-        url: ${{ parameters.name }}
+        url: ${{ steps.register-wait.input.seconds }}
       - title: Open the Catalog Info Component
         icon: catalog
-        entityRef: ${{ parameters.name}}
+        entityRef: ${{ steps.register-wait.input.seconds }}
