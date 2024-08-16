@@ -52,7 +52,7 @@ spec:
   steps:
     - action: debug:wait
       id: build-wait
-      name: Build Application
+      name: Build Project
       input:
         seconds: 2
     - action: debug:wait
