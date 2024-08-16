@@ -3,9 +3,10 @@ kind: Template
 metadata:
   name: guestbook_template
   title: Guestbook Project Template
-  description: Create a Nodejs component backed by Mongodb
+  description: Create a Nodejs component
   tags:
     - nodejs
+    - mongodb
     - hackathon
 spec:
   owner: devs@globex.com
