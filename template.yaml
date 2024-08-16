@@ -40,7 +40,7 @@ spec:
             - ../../../skeletons/tekton/
           enumNames:
             - OpenShift Pipelines
-        cd:
+        registry:
           title: Select Image Registry
           type: string
           description: This action will push the container image to the selected registry
@@ -48,26 +48,26 @@ spec:
           enum:
             - ../../../skeletons/quay/
           enumNames:
-            - Quay.IO
+            - Quay.io
    
   steps:
     - id: Build Application
-      name: Log Message
+      name: Build Application
       action: debug:log
       input:
         message: 'Hello, ${{ parameters.name }}'
     - id: Provision CI/CD
-      name: Log Message
+      name: Provision CI/CD
       action: debug:log
       input:
         message: 'Hello, ${{ parameters.name }}'
     - id: Push to image Registry
-      name: Log Message
+      name: Push to image Registry
       action: debug:log
       input:
         message: 'Hello, ${{ parameters.name }}'
     - id: Register Component in Catalog
-      name: Log Message
+      name:  Register Component in Catalog
       action: debug:log
       input:
         message: 'Hello, ${{ parameters.name }}'
